@@ -8,4 +8,4 @@ verbs01
 April 2020.  Identify Cappeller entries which are roots and correspond with MW spellings.  Further identify the prefixes (upasargas) within roots and
 correspond them to MW where possible.
 
-See #1 for introduction.
+See https://github.com/sanskrit-lexicon/CCS/issues/1 for introduction.
