@@ -125,5 +125,38 @@ flowchart LR
   X --> A["csl-app web display"]
 ```
 
+## Front matter (`prefaces/`)
+
+OCR transcription + English and Russian translations of the dictionary's front matter (title page, dedication, and the four-page *Vorrede*) of **Carl Cappeller**, *Sanskrit-Wörterbuch nach den Petersburger Wörterbüchern bearbeitet* (Strassburg 1887, Verlag von Karl J. Trübner).
+
+- **Source language:** German (1887 orthography preserved verbatim). The preface is signed *Jena, 3 July 1887* by Carl Cappeller and the dictionary is dedicated to Otto Böhtlingk and Rudolph Roth.
+- **Source:** Cologne csldoc scans — [CCS front-matter index](https://sanskrit-lexicon.uni-koeln.de/scans/csldev/csldoc/build/dictionaries/prefaces/ccspref.html). Digitizer running-header/footer stamps are omitted.
+- Per-page files `ccsprefNN.md` (German) + `.en.md` / `.ru.md`; consolidated single-file editions [`ccspref_all.de.md`](https://github.com/sanskrit-lexicon/CCS/blob/main/prefaces/ccspref_all.de.md), [`ccspref_all.en.md`](https://github.com/sanskrit-lexicon/CCS/blob/main/prefaces/ccspref_all.en.md), [`ccspref_all.ru.md`](https://github.com/sanskrit-lexicon/CCS/blob/main/prefaces/ccspref_all.ru.md) built by [`build_combined.py`](https://github.com/sanskrit-lexicon/CCS/blob/main/prefaces/build_combined.py).
+- Folder index: [`prefaces/README.md`](https://github.com/sanskrit-lexicon/CCS/blob/main/prefaces/README.md).
+- Five Devanāgarī example words in the Vorrede (p. VII) are transcribed verbatim with their printed accent marks: अनन्यमानस, चतुर्धा, इष्टि, स्वयुज्, कथावशेष.
+
+<details>
+<summary><strong>OCR run notes (2026-06-22)</strong> — cost, timing, and technical lessons</summary>
+
+Produced by the `/cologne-preface-ocr` skill (vision OCR + translation, single agent, synchronous). Process retrospective, not part of the deliverable.
+
+**Cost.** All work done in one foreground agent — no OCR/translation subagents were spawned. The cost is dominated by ~40 native-resolution crop reads (title/dedication bands, four dense single-column preface pages cut into 4–6 bands each, plus 3× zoom tiles to verify the five Devanāgarī words on p. VII). Main thread ≈ **0.6–0.8 M tokens** total.
+
+**Time.** Wall-clock ≈ 15 min. Gated mainly by the gentle one-at-a-time scan download (server was recently throttling) and the iterative Devanāgarī word-tile zooming.
+
+**Technical lessons (reusable):**
+1. 6 scans, all single embedded `_images/ccs_Page_0NN_Image_0002.png`; toctree order = filename order here (no swap).
+2. Pages 03–06 are single-column dense prose (not two-column) — full-width native bands of ~780 px tall scale cleanly to ≤1900 px.
+3. The five Devanāgarī example words on p. VII needed individual 3× tiles to pin the accent strokes (udātta vertical bar over इ in इष्टि and over यु in स्वयुज्); band-level reads were not enough.
+4. Cappeller uses the long-ſ ligature in *Maſsstabe / bloſs / auſser / groſsen*; transcribed with `ſ`/`ſs` where printed.
+
+</details>
+
+## Timeline
+
+| Date | Work |
+|---|---|
+| Jun 2026 | Front-matter OCR + EN/RU translation of the preface (`prefaces/`) |
+
 ---
 *Issue taxonomy and documentation per the [Cologne issue runbook](https://github.com/sanskrit-lexicon/csl-observatory/blob/main/runbook/cologne-issue-runbook.md).*
