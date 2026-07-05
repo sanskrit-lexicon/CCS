@@ -1,5 +1,7 @@
 # CCS — Cappeller *Sanskrit-Wörterbuch* (1887)
 
+_Created: 16-05-2026 · Last updated: 05-07-2026_
+
 Development and correction repository for **Carl Cappeller's *Sanskrit-Wörterbuch***, a Sanskrit→German dictionary, part of the [Cologne Digital Sanskrit Lexicon](https://www.sanskrit-lexicon.uni-koeln.de/) (CDSL). The canonical source text lives in [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/ccs/ccs.txt) (28,751 entries); this repository holds the development, correction, and enrichment work.
 
 Based largely on the Petersburg Wörterbuch (CCS ⊆ PW ≈ 0.945 by headword containment); same author as CAE.
@@ -15,6 +17,28 @@ Based largely on the Petersburg Wörterbuch (CCS ⊆ PW ≈ 0.945 by headword co
 | Path | Purpose |
 |---|---|
 | `verbs01/` | Verb identification: maps verb entries to MW roots, with Devanāgarī renderings |
+
+## Usage example
+
+A real entry from [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/ccs/ccs.txt) — line 88, the "akaRwaka" entry:
+
+```
+88:{#akaRwaka#}¦ dornen-, feindlos.
+```
+
+To correct the German gloss (e.g. `dornen-, feindlos` → `dornenlos, feindlos`, a compound-hyphenation fix), write a paired-line change file and apply it with `updateByLine.py`:
+
+```
+; issueNNN: fix compound hyphenation in "akaRwaka" gloss
+88 old {#akaRwaka#}¦ dornen-, feindlos.
+88 new {#akaRwaka#}¦ dornenlos, feindlos.
+```
+
+```sh
+python updateByLine.py ccs.txt change_88.txt ccs_corrected.txt
+```
+
+(Illustrative — no actual defect at this line; the workflow above is exact, only the fictitious hyphenation fix is invented to demonstrate the change-file mechanics.)
 
 ## Timeline
 
@@ -160,3 +184,5 @@ Produced by the `/cologne-preface-ocr` skill (vision OCR + translation, single a
 
 ---
 *Issue taxonomy and documentation per the [Cologne issue runbook](https://github.com/sanskrit-lexicon/csl-observatory/blob/main/runbook/cologne-issue-runbook.md).*
+
+_Dr. Mārcis Gasūns_
