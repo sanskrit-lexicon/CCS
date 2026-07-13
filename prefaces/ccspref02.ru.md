@@ -11,7 +11,7 @@ source_url: https://sanskrit-lexicon.uni-koeln.de/scans/csldev/csldoc/build/dict
 
 ПОСВЯЩАЕТСЯ
 
-БЕТЛИНГКУ
+БЁТЛИНГКУ
 
 И
 
