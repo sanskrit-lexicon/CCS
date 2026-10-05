@@ -1,5 +1,7 @@
 # CCS — Cappeller *Sanskrit-Wörterbuch* (1887)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23151317.svg)](https://doi.org/10.5281/zenodo.23151317)
+
 _Created: 16-05-2026 · Last updated: 11-07-2026_
 
 Development and correction repository for **Carl Cappeller's *Sanskrit-Wörterbuch***, a Sanskrit→German dictionary, part of the [Cologne Digital Sanskrit Lexicon](https://www.sanskrit-lexicon.uni-koeln.de/) (CDSL). The canonical source text lives in [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/ccs/ccs.txt) (28,751 entries); this repository holds the development, correction, and enrichment work.
