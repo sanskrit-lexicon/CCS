@@ -4,7 +4,7 @@
 
 _Created: 16-05-2026 · Last updated: 11-07-2026_
 
-Development and correction repository for **Carl Cappeller's *Sanskrit-Wörterbuch***, a Sanskrit→German dictionary, part of the [Cologne Digital Sanskrit Lexicon](https://www.sanskrit-lexicon.uni-koeln.de/) (CDSL). The canonical source text lives in [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/ccs/ccs.txt) (28,751 entries); this repository holds the development, correction, and enrichment work.
+Development and correction repository for **Carl Cappeller's *Sanskrit-Wörterbuch***, a Sanskrit→German dictionary, part of the [Cologne Digital Sanskrit Lexicon](https://www.sanskrit-lexicon.uni-koeln.de/) (CDSL). The canonical source text lives in [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/main/v02/ccs/ccs.txt) (28,751 entries); this repository holds the development, correction, and enrichment work.
 
 Based largely on the Petersburg Wörterbuch (CCS ⊆ PW ≈ 0.945 by headword containment); same author as CAE.
 
@@ -24,7 +24,7 @@ Based largely on the Petersburg Wörterbuch (CCS ⊆ PW ≈ 0.945 by headword co
 
 ## Usage example
 
-A real entry from [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/ccs/ccs.txt) — line 88, the "akaRwaka" entry:
+A real entry from [`csl-orig/v02/ccs/ccs.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/main/v02/ccs/ccs.txt) — line 88, the "akaRwaka" entry:
 
 ```
 88:{#akaRwaka#}¦ dornen-, feindlos.
